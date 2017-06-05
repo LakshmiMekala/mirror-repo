@@ -3,6 +3,5 @@ language : go
 go:  
  - master
  
-script:
- - echo $PWD && go test -v
+script: echo $PWD && go test -v
  
