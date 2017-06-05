@@ -1,6 +1,7 @@
 language : go
 
 go:  
+ - 1.7
  - master
  
 script: echo $PWD && go test -v
