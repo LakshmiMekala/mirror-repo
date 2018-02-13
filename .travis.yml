@@ -1,8 +1,31 @@
-language : go
+sudo: false
 
-go:  
- - 1.7
- - master
- 
-script: echo $PWD && go test -v
- 
+language: go
+
+go:
+  - master
+
+os:
+  - linux
+
+branches:
+  only:
+  - master
+
+install:
+  - go get github.com/spf13/hugo
+
+script:
+  - cd docs && hugo
+  - cd ../showcases && hugo
+  - mv public ../docs/public/showcases
+  - cd ../docs
+  - cd public && ls -alh
+
+deploy:
+  provider: pages
+  skip_cleanup: true
+  local-dir: docs/public
+  github_token: $GITHUB_TOKEN
+  on:
+    branch: master
