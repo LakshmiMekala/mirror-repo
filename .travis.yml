@@ -1,9 +1,6 @@
-sudo: false
+sudo: required
 
 language: go
-
-go:
-  - master
 
 os:
   - linux
@@ -13,19 +10,13 @@ branches:
   - master
 
 install:
-  - go get github.com/spf13/hugo
+  - go get -u github.com/ains/go-test-html
+  - go get github.com/project-flogo/cli/...
+  - go get github.com/project-flogo/legacybridge
+  - go get github.com/imdario/mergo
 
 script:
-  - cd docs && hugo
-  - cd ../showcases && hugo
-  - mv public ../docs/public/showcases
-  - cd ../docs
-  - cd public && ls -alh
-
-deploy:
-  provider: pages
-  skip_cleanup: true
-  local-dir: docs/public
-  github_token: $GITHUB_TOKEN
-  on:
-    branch: master
+  - git clone https://github.com/project-flogo/microgateway.git $GOPATH/src/github.com/project-flogo/microgateway
+  - pushd $GOPATH/src/github.com/project-flogo/microgateway
+  - go test -p 1 ./... 2
+  - popd
