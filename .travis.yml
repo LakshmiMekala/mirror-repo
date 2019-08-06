@@ -15,6 +15,6 @@ script:
   - git clone https://github.com/project-flogo/microgateway.git $GOPATH/src/github.com/project-flogo/microgateway
   - pushd $GOPATH/src/github.com/project-flogo/microgateway
   - export GO111MODULE=on
-  - go build ./...
+  - go install ./...
   #- go test -p 1 ./... -v 2
   - popd
