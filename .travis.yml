@@ -16,5 +16,5 @@ script:
   - pushd $GOPATH/src/github.com/project-flogo/microgateway
   - export GO111MODULE=on
   - go build ./...
-  - go test -p 1 ./... -v 2
+  #- go test -p 1 ./... -v 2
   - popd
