@@ -5,10 +5,6 @@ language: go
 os:
   - linux
 
-branches:
-  only:
-  - master
-
 install:
   - go get -u github.com/ains/go-test-html
   - go get github.com/project-flogo/cli/...
