@@ -20,8 +20,8 @@ script:
 #   - go install ./...
 #   #- go test -p 1 ./... -v 2
 #   - popd
-  - git clone https://github.com/LakshmiMekala/rules-1.git $GOPATH/src/github.com/LakshmiMekala/rules-1
-  - pushd $GOPATH/src/github.com/LakshmiMekala/rules-1
+  - git clone https://github.com/project-flogo/rules.git $GOPATH/src/github.com/project-flogo/rules
+  - pushd $GOPATH/src/github.com/project-flogo/rules
   - git checkout feature-example-gotests
   - export GO111MODULE=on
   - go build ./...
