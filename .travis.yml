@@ -4,17 +4,20 @@ language: go
 
 os:
   - linux
+services:
+  - docker  
 
 install:
   - go get -u github.com/ains/go-test-html
-  - go get github.com/project-flogo/cli/...
-  - go get github.com/project-flogo/legacybridge
-  - go get github.com/imdario/mergo
+#   - go get github.com/project-flogo/cli/...
+#   - go get github.com/project-flogo/legacybridge
+#   - go get github.com/imdario/mergo
 
 script:
-  - git clone https://github.com/project-flogo/microgateway.git $GOPATH/src/github.com/project-flogo/microgateway
-  - pushd $GOPATH/src/github.com/project-flogo/microgateway
-  - export GO111MODULE=on
-  - go install ./...
-  #- go test -p 1 ./... -v 2
-  - popd
+#   - git clone https://github.com/project-flogo/microgateway.git $GOPATH/src/github.com/project-flogo/microgateway
+#   - pushd $GOPATH/src/github.com/project-flogo/microgateway
+#   - export GO111MODULE=on
+#   - go install ./...
+#   #- go test -p 1 ./... -v 2
+#   - popd
+  - docker-compose help
