@@ -9,9 +9,9 @@ services:
 
 install:
   - go get -u github.com/ains/go-test-html
-#   - go get github.com/project-flogo/cli/...
-#   - go get github.com/project-flogo/legacybridge
-#   - go get github.com/imdario/mergo
+  - go get github.com/project-flogo/cli/...
+  - go get github.com/project-flogo/legacybridge
+  - go get github.com/imdario/mergo
 
 script:
 #   - git clone https://github.com/project-flogo/microgateway.git $GOPATH/src/github.com/project-flogo/microgateway
@@ -20,4 +20,11 @@ script:
 #   - go install ./...
 #   #- go test -p 1 ./... -v 2
 #   - popd
-  - docker-compose help
+  - git clone https://github.com/LakshmiMekala/rules-1.git $GOPATH/src/github.com/LakshmiMekala/rules-1
+  - pushd $GOPATH/src/github.com/LakshmiMekala/rules-1
+  - git checkout feature-example-gotests
+  - export GO111MODULE=on
+  - go build ./...
+  - go test -v ./...
+  - popd
+#   docker-compose help
