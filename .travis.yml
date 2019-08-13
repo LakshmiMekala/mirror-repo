@@ -22,8 +22,9 @@ script:
 #   - popd
 #   - git clone https://github.com/project-flogo/rules.git $GOPATH/src/github.com/project-flogo/rules
 #   - pushd $GOPATH/src/github.com/project-flogo/rules
-  - git clone https://github.com/project-flogo/rules.git $HOME
-  - pushd $HOME
+  - mkdir -p $HOME/test/rules
+  - git clone https://github.com/project-flogo/rules.git $HOME/test/rules
+  - pushd $HOME/test/rules
   - git checkout feature-invoke-activity
 #   - export GO111MODULE=on
 #   - go build ./...
