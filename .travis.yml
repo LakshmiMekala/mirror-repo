@@ -14,27 +14,10 @@ install:
   - go get github.com/imdario/mergo
 
 script:
-#   - git clone https://github.com/project-flogo/microgateway.git $GOPATH/src/github.com/project-flogo/microgateway
-#   - pushd $GOPATH/src/github.com/project-flogo/microgateway
-#   - export GO111MODULE=on
-#   - go install ./...
-#   #- go test -p 1 ./... -v 2
-#   - popd
-#   - git clone https://github.com/project-flogo/rules.git $GOPATH/src/github.com/project-flogo/rules
-#   - pushd $GOPATH/src/github.com/project-flogo/rules
-#   - mkdir -p $HOME/test/rules
-#   - git clone https://github.com/project-flogo/rules.git $HOME/test/rules
-#   - pushd $HOME/test/rules
-#   - git checkout feature-invoke-activity
-#   - export GO111MODULE=on
-#   - go build ./...
-#   - go test -v ./...
   - git clone https://github.com/project-flogo/rules.git $GOPATH/src/github.com/project-flogo/rules
   - pushd $GOPATH/src/github.com/project-flogo/rules
-  - git checkout feature-example-gotests
-  - git checkout feature-invoke-activity
+  - git checkout develop
   - export GO111MODULE=on
   - go build ./...
   - go test -v ./...
   - popd
-#   docker-compose help
