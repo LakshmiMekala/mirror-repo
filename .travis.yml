@@ -19,7 +19,7 @@ script:
   - pushd $GOPATH/src/github.com/project-flogo/rules
   - git checkout develop
 #   - rm -rf go.sum
-#   - export GO111MODULE=on
+  - export GO111MODULE=on
 #   - go build ./...
   - go test -v ./...
   - popd
