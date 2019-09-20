@@ -10,15 +10,16 @@ services:
 install:
   - go get -u github.com/ains/go-test-html
   - go get github.com/project-flogo/cli/...
+  - go get github.com/project-flogo/rules/...
   - go get github.com/project-flogo/legacybridge
   - go get github.com/imdario/mergo
 
 script:
-  - git clone https://github.com/project-flogo/rules.git $GOPATH/src/github.com/project-flogo/rules
+#   - git clone https://github.com/project-flogo/rules.git $GOPATH/src/github.com/project-flogo/rules
   - pushd $GOPATH/src/github.com/project-flogo/rules
-  - git checkout chore-fix-gotests
+  - git checkout develop
 #   - rm -rf go.sum
-  - export GO111MODULE=on
-  - go build ./...
+#   - export GO111MODULE=on
+#   - go build ./...
   - go test -v ./...
   - popd
