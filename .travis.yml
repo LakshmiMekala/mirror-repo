@@ -18,7 +18,7 @@ script:
 #   - git clone https://github.com/project-flogo/rules.git $GOPATH/src/github.com/project-flogo/rules
   - pushd $GOPATH/src/github.com/project-flogo/rules
   - git checkout develop
-  - rm -rf go.sum
+#   - rm -rf go.sum
   - export GO111MODULE=on
 #   - go build ./...
   - go test -p 1 ./...
