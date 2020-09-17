@@ -23,3 +23,7 @@ script:
 #   - go build ./...
   - go test -v ./...
   - popd
+  
+notifications:
+  email:
+    - $emailadd
