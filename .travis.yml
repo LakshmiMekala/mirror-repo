@@ -27,4 +27,7 @@ script:
   
 notifications:
   email:
-    - $emailadd
+    on_failure: always
+    on_success: always
+    recipients:
+      - $emailadd
