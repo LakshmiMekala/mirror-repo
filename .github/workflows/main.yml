@@ -1,0 +1,20 @@
+name: Mirroring
+
+on: [push, delete]
+
+jobs:
+  to_gitlab:
+    runs-on: ubuntu-latest
+    steps:                                              # <-- must use actions/checkout@v1 before mirrorin
+
+      - name: mirror-repository
+        # You may pin to the exact commit or the version.
+        # uses: spyoungtech/mirror-action@b313a53232e77d8f7d8fcdb00f90b94100767be1
+        uses: spyoungtech/mirror-action@v0.4.3
+        with:
+          # The remote repository e.g. https://github.com/octocat/foo.git or git@github.com:octocat/foo.git
+          REMOTE: https://github.com/LakshmiMekala/mirror2.git # optional
+          # Username for remote repository
+          GIT_USERNAME: lmekala@tibco.com # optional
+          # The git https password or token for the remote repository
+          GIT_PASSWORD: Sfqatest@1 # optional
