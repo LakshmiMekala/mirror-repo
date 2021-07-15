@@ -27,17 +27,43 @@ jobs:
 #         ssh_username:                                   # <-- (for codecommit) you need to specify ssh-key-id as ssh username.
 #           ${{ secrets.CODECOMMIT_SSH_PRIVATE_KEY_ID }}
 
-      - name: Mirroring Repository
+#       - name: Mirroring Repository
+#         # You may pin to the exact commit or the version.
+#         # uses: pixta-dev/repository-mirroring-action@02f1627ade9e6b3b69e6a6d4fe8bc997474f48d1
+#         uses: pixta-dev/repository-mirroring-action@v1
+#         with:
+#           # SSH private key for ssh connection to the target repository
+# #           ssh_private_key: # optional
+#           # Target url
+#           target_repo_url: https://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@github.com/LakshmiMekala/mirror-repo.git
+#           # Username for ssh connection
+# #           ssh_username: lmekala@tibco.com # optional, default is git
+
+      - name: mirror-repository
         # You may pin to the exact commit or the version.
-        # uses: pixta-dev/repository-mirroring-action@02f1627ade9e6b3b69e6a6d4fe8bc997474f48d1
-        uses: pixta-dev/repository-mirroring-action@v1
+        # uses: spyoungtech/mirror-action@b313a53232e77d8f7d8fcdb00f90b94100767be1
+        uses: spyoungtech/mirror-action@v0.4.3
         with:
-          # SSH private key for ssh connection to the target repository
-#           ssh_private_key: # optional
-          # Target url
-          target_repo_url: https://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@github.com/LakshmiMekala/mirror-repo.git
-          # Username for ssh connection
-#           ssh_username: lmekala@tibco.com # optional, default is git
+          # The remote repository e.g. https://github.com/octocat/foo.git or git@github.com:octocat/foo.git
+          REMOTE: git@github.com:LakshmiMekala/mirror-repo.git # optional
+          # Username for remote repository
+          GIT_USERNAME: lmekala@tibco.com # optional
+          # The git https password or token for the remote repository
+          GIT_PASSWORD: Sfqatest@1 # optional
+          # The ssh private key for writing to the remote repository, if using ssh
+#           GIT_SSH_PRIVATE_KEY: # optional
+#           # The ssh public key for writing to the remote repository. Normally, not required at all
+#           GIT_SSH_PUBLIC_KEY: # optional
+#           # The contents of a SSH known_hosts file for host key verification
+#           GIT_SSH_KNOWN_HOSTS: # optional
+#           # if true, skips host key verification. Mutually exclusive with GIT_SSH_KNOWN_HOSTS
+#           GIT_SSH_NO_VERIFY_HOST: # optional, default is false
+#           # Push all refs instead of just the current branch
+#           PUSH_ALL_REFS: # optional, default is true
+#           # The arugments to use when pushing the repository
+#           GIT_PUSH_ARGS: # optional, default is --tags --force --prune
+#           # set to "true" to enable debug mode
+#           DEBUG: # optional, default is false
 
 
 # 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
