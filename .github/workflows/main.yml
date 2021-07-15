@@ -45,7 +45,7 @@ jobs:
         uses: spyoungtech/mirror-action@v0.4.3
         with:
           # The remote repository e.g. https://github.com/octocat/foo.git or git@github.com:octocat/foo.git
-          REMOTE: git@github.com:LakshmiMekala/mirror-repo.git # optional
+          REMOTE: https://github.com/LakshmiMekala/mirror-repo.git # optional
           # Username for remote repository
           GIT_USERNAME: lmekala@tibco.com # optional
           # The git https password or token for the remote repository
