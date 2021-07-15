@@ -17,4 +17,4 @@ jobs:
           # Username for remote repository
           GIT_USERNAME: lmekala@tibco.com # optional
           # The git https password or token for the remote repository
-          GIT_PASSWORD: Sfqatest@1 # optional
+          GIT_PASSWORD:  # optional
